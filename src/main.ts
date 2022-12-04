@@ -9,7 +9,11 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, //limpia la información enviada en la petición
-      forbidNonWhitelisted: true //Filtra la petición y genera error en caso de no se conforme
+      forbidNonWhitelisted: true, //Filtra la petición y genera error en caso de no se conforme
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true
+      }
     })
   )
 
