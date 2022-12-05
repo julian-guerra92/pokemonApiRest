@@ -51,6 +51,19 @@ yarn o npm start:dev
 http://localhost:3000/api/v2/seed
 ```
 
+#Production Buil
+1. Crear el archivo ```.env.prod```
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen de docker:
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+4. Después de haber creado la imagen sólo se necesita levantar la aplicación con: 
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up -d
+```
+
+
 ## Stack usado
 * MongoDB
 * Nest
